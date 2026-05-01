@@ -1,0 +1,9 @@
+# Team Task Manager — Railway Deployment Config
+
+[build]
+  builder = "NIXPACKS"
+
+[deploy]
+  startCommand = "node src/app.js"
+  restartPolicyType = "ON_FAILURE"
+  restartPolicyMaxRetries = 3
