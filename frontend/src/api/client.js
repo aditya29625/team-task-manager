@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: '/api' });
+const api = axios.create({ 
+  baseURL: import.meta.env.PROD 
+    ? 'https://team-task-manager-aditya.onrender.com/api' 
+    : '/api' 
+});
 
 api.interceptors.request.use(config => {
   const token = localStorage.getItem('ttm_token');
